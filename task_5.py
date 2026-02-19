@@ -4,12 +4,12 @@ def task5() -> None:
     Prints all prime numbers from 2 to n-1 (inclusive) as a space-separated string.
     If n <= 2, prints an empty line.
     '''
-    n = int(input())
-    if n <= 2:
+    limit = int(input())
+    if limit <= 2:
         print()
         return
-    primes = set(range(2, n))
-    for i in range(2, int(n ** 0.5) + 1):
-        if i in primes:
-            primes -= set(range(i * i, n, i))
-    print(' '.join(map(str, sorted(primes))))
+    candidates = set(range(2, limit))
+    for current in range(2, int(limit ** 0.5) + 1):
+        if current in candidates:
+            candidates -= set(range(current * current, limit, current))
+    print(' '.join(map(str, sorted(candidates))))
