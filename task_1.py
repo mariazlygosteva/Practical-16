@@ -4,12 +4,12 @@ def task1() -> None:
     Prints 'YES' if x appears at least twice in the list of integers,
     otherwise prints 'NO'.
     '''
-    a = list(map(int, input().split()))
-    x = int(input())
-    s, d = set(), set()
-    for i in a:
-        if i in s:
-            d.add(i)
+    sequence = list(map(int, input().split()))
+    digit = int(input())
+    seen_once, duplicates = set(), set()
+    for number in sequence:
+        if number in seen_once:
+            duplicates.add(number)
         else:
-            s.add(i)
-    print('YES' if x in d else 'NO')
+            seen_once.add(number)
+    print('YES' if digit in duplicates else 'NO')
