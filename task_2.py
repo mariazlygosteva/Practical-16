@@ -5,11 +5,11 @@ def task2() -> None:
     Otherwise reads n lines of space-separated words and prints the number
     of words that appear in every line (the intersection of all lines).
     '''
-    n = int(input())
-    if n == 0:
+    num_lines = int(input())
+    if num_lines == 0:
         print(0)
         return
-    common = set(input().split())
-    for i in range(n - 1):
-        common &= set(input().split())
-    print(len(common))
+    courses = set(input().split())
+    for i in range(num_lines - 1):
+        courses &= set(input().split())
+    print(len(courses))
